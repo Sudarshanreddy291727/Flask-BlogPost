@@ -51,8 +51,7 @@ def logout():
 @login_required
 def delete_account():
     user = current_user
-    Task.query.filter_by(user_id=user.id).delete()  # Delete user's tasks
-    db.session.delete(user)  # Delete user
+    db.session.delete(user)
     db.session.commit()
     logout_user()
     flash('Your account has been deleted.', 'info')
