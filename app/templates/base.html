@@ -15,7 +15,7 @@
             {% if current_user.is_authenticated %}
                 <a href="{{ url_for('main.logout') }}">Logout</a>
                 <form action="{{ url_for('main.delete_account') }}" method="POST" style="display:inline;">
-                    <button type="submit" style="background:none; border:none; color:blue; cursor:pointer; text-decoration:underline;">Delete Account</button>
+                    <button type="submit" style="background:none; border:none; color:red; font-size: 15px; cursor:pointer;">Delete Account</button>
                 </form>
                 <a href="{{ url_for('main.new_blog') }}">Create Blog</a> <!-- Add this line -->
             {% else %}
