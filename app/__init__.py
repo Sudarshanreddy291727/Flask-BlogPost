@@ -3,7 +3,6 @@ from flask import Flask
 from flask_restful import Api
 from app.models import db, User
 from flask_login import LoginManager, current_user
-from app.resources import TaskResource
 
 def create_app():
     app = Flask(__name__)
@@ -28,6 +27,5 @@ def create_app():
     def inject_user():
         return dict(current_user=current_user)
     
-    api.add_resource(TaskResource, '/api/tasks', '/api/tasks/<int:task_id>')
 
     return app
